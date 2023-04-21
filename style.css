@@ -80,12 +80,11 @@ a {
 
 .description {
     width: 95%;
-    text-align: center;
     font-size: small;
-    padding: 10px 0;
+    padding: 10px 20px;
 
     background-color: #fff;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .icons a {
