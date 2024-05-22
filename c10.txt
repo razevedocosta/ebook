@@ -1,0 +1,30 @@
+var
+  fPrecoStop,fPrecoAlvo, maximac10, minimac10, fechamentoc10, nEstLen, nRange : float;
+
+begin
+  if (Time = 1000) then
+    begin
+      maximac10 := HIGH;
+      minimac10 := LOW;
+      fechamentoc10 := CLOSE;
+      PaintBar(clYellow);
+      nRange := Range;
+      PlotText(nRange,clYellow,0,6);
+    end;
+
+  nEstLen := SlowStochastic(9);
+
+  if (Time > 1000) then
+    begin
+      if (close <= minimac10) and (nEstLen < 18) then
+        PaintBar(clPurpura);
+      
+      if (close >= fechamentoc10) and (nEstLen < 20) then
+        PaintBar(clGreen);
+
+      if (low < maximac10) and (close > maximac10) and (nEstlen < 32) then
+        PaintBar(clGreen);
+
+    end;
+
+end;
